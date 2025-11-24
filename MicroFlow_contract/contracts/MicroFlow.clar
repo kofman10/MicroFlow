@@ -456,10 +456,10 @@
     (
       (current-stats (default-to
         { volume: u0, swap-count: u0 }
-        (map-get? recent-swaps { pool-id: pool-id, block-height: block-height })))
+        (map-get? recent-swaps { pool-id: pool-id, block-height: stacks-block-height })))
     )
     (map-set recent-swaps
-      { pool-id: pool-id, block-height: block-height }
+      { pool-id: pool-id, block-height: stacks-block-height }
       {
         volume: (+ (get volume current-stats) volume),
         swap-count: (+ (get swap-count current-stats) u1)
